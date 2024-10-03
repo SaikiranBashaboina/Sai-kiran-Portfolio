@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't add extra space */
+}
+
+/* -----header----- */
+nav {
+    background-image: linear-gradient(to left, rgb(141, 71, 37), rgb(229, 181, 115), rgb(237, 221, 203));
+    display: flex; /* Use flex to handle layout */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Reduced padding for smaller screens */
+}
+
+.profile {
+    display: flex;
+    align-items: center; /* Center icon and text vertically */
+}
+
+.icon {
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+h1 {
+    /* font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-size: 1.9rem; /* Adjusted font size for better scaling */
+}
+
+nav ul {
+    display: flex;
+    text-align: center;
+    align-items: center; /* Center links vertically */
+    flex-wrap: wrap; /* Allows wrapping for small screens */
+    margin-top: 10px;
+    flex-direction: row;
+
+}
+
+nav ul li {  
+    list-style-type: none;
+    margin: 0px 10px; /* Reduced margin between links */
+}
+
+nav ul li:hover{
+    border-bottom: 2px solid white ;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+/* ----Main---- */
+main {
+    background-color: rgb(62, 50, 0);
+    padding: 20px 0; /* Add padding to separate content from the top */
+    color:white
+}
+
+.firstSection {
+    display: flex;
+    flex-direction: column-reverse; /* Stack on smaller screens */
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.rightSection img {
+    max-width: 380px;
+    border-radius: 50%;
+    flex-direction: column-reverse;
+}
+
+.leftSection {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.leftSection span{
+    font-size: 6rem;
+}
+
+.skills {
+    text-align: center;
+    font-size: xx-large;
+    margin: 30px 30px 30px 30px;
+}
+
+.skills ul {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.skills ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    flex: 0 0 45%;
+}
+
+.skills ul li i,img{
+    margin-right: 10px;
+}
+
+.about {
+    text-align: center;
+    font-size: xx-large;
+    margin: 30px 30px 30px 30px;
+}
+
+.projects {
+    text-align: center;
+    font-size: xx-large;
+    margin: 30px 30px 30px 30px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.slider {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.content {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.reverse .slider {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.reverse .content {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.bottomSection ul li{
+    list-style-type: none;
+}
+
+.bottomSection ul li a {
+    text-decoration: none;
+}
+
+nav .fas{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .row, .reverse {
+        flex-direction: column;
+    }
+
+    .slider, .content, .reverse .slider, .reverse .content {
+        margin: 0;
+        width: 100%;
+    }
+
+    .row, .reverse {
+        margin-bottom: 30px;
+    }
+    
+    .leftSection span{
+        font-size: 1.4rem;
+        margin: 20px 0;
+    }
+
+    nav .fas{
+        display: block;
+        align-items: flex-end;
+    }
+
+    nav ul{
+        background: rgb(194, 232, 232);
+        position: fixed;
+        top: 0px;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.8s;
+    }
+
+    #move{
+        margin-left: 2.5rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin:25px;
+    }
+
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    
+}
+
+
+/* -----Media Queries----- */
+@media (min-width: 768px) {
+    /* For tablets and larger screens */
+    nav ul {
+        margin-left: 200px; /* Adjust left margin */
+    }
+
+    .firstSection {
+        flex-direction: row; /* Side-by-side layout for larger screens */
+        text-align: left;
+    }
+
+    .leftSection {
+        font-size: 3rem;
+        margin: 100px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* For desktop screens */
+    nav ul {
+        margin-left: 750px; /* Move navigation to the right */
+    }
+
+    .leftSection {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .firstSection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlighted-text {
+        font-size: 2rem;
+    }
+
+    #element{
+        font-size: 3rem;
+    }
+
+    .leftSection span{
+        font-size: 3rem;
+    }
+
+}
+
+/* Skills Section */
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    flex: 0 0 45%;
+}
+
+.skills ul li i, .skills ul li img {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile tags ul li{
+        flex-wrap: nowrap;
+    }
+    .skills ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills ul li {
+        flex: 0 0 100%;
+        flex-wrap: nowrap;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: rgb(62, 50, 0);
+    text-align: center;
+    color: black;
+    padding: 20px;
+}
+
+.bottomSection ul {
+    color: white;
+    list-style: none;
+    padding: 0;
+}
+
+.bottomSection ul li {
+    margin: 10px 0;
+}
+.bottomSection ul li a{
+    color: white;
+}
